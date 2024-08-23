@@ -1,14 +1,12 @@
-import React, { useEffect, useState } from "react"
+import React, { useEffect } from "react"
 import axios from "axios"
-export const Balance = () => {
-const [value,setValue] = useState()
-    useEffect( ()=>{
-        axios.get('http://localhost:3000/api/v1/account/balance',{
+export const Balance = ({ value }) => {
+
+    useEffect(()=>{
+        const response = axios.get('http://localhost:3000/api/v1/account/balance',{
             headers:{
               Authorization : "Bearer "+localStorage.getItem("token")
             }
-          }).then(response=>{
-              setValue(response.data.balance)
           })
     },[])
     return <div className="flex p-5">

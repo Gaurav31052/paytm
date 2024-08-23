@@ -7,9 +7,9 @@ const [value,setValue] = useState()
             headers:{
               Authorization : "Bearer "+localStorage.getItem("token")
             }
-          }).then(response=>{
-              setValue(response.data.balance)
-          })
+          }).then
+          console.log(response.data)
+        //   setValue(response.data.balance)
     },[])
     return <div className="flex p-5">
         <div className="font-bold text-lg">

@@ -8,7 +8,9 @@ const [value,setValue] = useState()
               Authorization : "Bearer "+localStorage.getItem("token")
             }
           }).then(response=>{
+              
               setValue(response.data.balance)
+
           })
     },[])
     return <div className="flex p-5">

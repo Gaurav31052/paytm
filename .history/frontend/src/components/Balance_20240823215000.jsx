@@ -9,6 +9,8 @@ const [value,setValue] = useState()
             }
           }).then(response=>{
               setValue(response.data.balance)
+              
+
           })
     },[])
     return <div className="flex p-5">

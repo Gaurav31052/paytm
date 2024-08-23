@@ -3,13 +3,13 @@ import axios from "axios"
 export const Balance = () => {
 const [value,setValue] = useState()
     useEffect( ()=>{
-        axios.get('http://localhost:3000/api/v1/account/balance',{
+        const response =  axios.get('http://localhost:3000/api/v1/account/balance',{
             headers:{
               Authorization : "Bearer "+localStorage.getItem("token")
             }
-          }).then(response=>{
-              setValue(response.data.balance)
           })
+          console.log()
+        //   setValue(response.data.balance)
     },[])
     return <div className="flex p-5">
         <div className="font-bold text-lg">

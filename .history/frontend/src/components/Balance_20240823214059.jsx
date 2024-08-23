@@ -1,16 +1,16 @@
-import React, { useEffect, useState } from "react"
-import axios from "axios"
-export const Balance = () => {
-const [value,setValue] = useState()
-    useEffect( ()=>{
-        axios.get('http://localhost:3000/api/v1/account/balance',{
+import React, { useEffect } from "react"
+export const Balance = ({ value }) => {
+
+    useEffect(()=>{
+        axios.post('http://localhost:3000/api/v1/account/transfer',{
+            to:id,
+            amount
+          },{
             headers:{
               Authorization : "Bearer "+localStorage.getItem("token")
             }
-          }).then(response=>{
-              setValue(response.data.balance)
           })
-    },[])
+    })
     return <div className="flex p-5">
         <div className="font-bold text-lg">
             Your balance

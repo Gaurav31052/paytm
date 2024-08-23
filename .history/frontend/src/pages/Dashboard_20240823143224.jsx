@@ -8,7 +8,7 @@ const Dashboard = () => {
   return (
     <div>
       <Appbar/>
-      <Balance/>
+      <Balance value={1000}/>
       <Users/>
     </div>
   )
