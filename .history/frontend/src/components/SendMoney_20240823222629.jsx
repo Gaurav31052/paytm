@@ -30,14 +30,10 @@ const SendMoney = () => {
         headers:{
           Authorization : "Bearer "+localStorage.getItem("token")
         }
-      }).then(response => {
-              notify(); // Display success notification
-            })
-            .catch(error => {
-              toast.error("Failed to send money"); // Display error notification if the request fails
-            });
+      })
     }} label={"Initiate Transfer"}/>
-    <ToastContainer />
+    <button onClick={notify}>notify</button>
+    
     </div>
       
     </div>

@@ -11,7 +11,7 @@ const SendMoney = () => {
   const id =SearchParams.get("id");
   const name =SearchParams.get("name");
   const [amount,setAmount] = useState("")
-  const notify = () => toast("Money Send Successfully");
+  const notify = () => toast("Wow so easy!");
   return (
     <div className='h-screen flex justify-center items-center bg-slate-700'>
     <div className=' w-1/3 border-2 rounded-lg flex-col flex p-4 bg-slate-200'>
@@ -30,14 +30,9 @@ const SendMoney = () => {
         headers:{
           Authorization : "Bearer "+localStorage.getItem("token")
         }
-      }).then(response => {
-              notify(); // Display success notification
-            })
-            .catch(error => {
-              toast.error("Failed to send money"); // Display error notification if the request fails
-            });
+      })
     }} label={"Initiate Transfer"}/>
-    <ToastContainer />
+    <button onClick={()=>{notify}}>notify</button>
     </div>
       
     </div>

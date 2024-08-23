@@ -5,18 +5,17 @@ import Button from './Button'
 import { useSearchParams } from 'react-router-dom'
 import axios from 'axios'
 import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+  import 'react-toastify/dist/ReactToastify.css';
 const SendMoney = () => {
   const [SearchParams] = useSearchParams();
   const id =SearchParams.get("id");
   const name =SearchParams.get("name");
   const [amount,setAmount] = useState("")
-  const notify = () => toast("Money Send Successfully");
   return (
     <div className='h-screen flex justify-center items-center bg-slate-700'>
     <div className=' w-1/3 border-2 rounded-lg flex-col flex p-4 bg-slate-200'>
     <Heading label={"Send Money"}/>
-    
+
     <div className=' mt-10 mb-4 flex items-center gap-3'>
         <div className=' w-14 h-14 rounded-full p-4 bg-gray-400 flex justify-center items-center'><span className='text-white font-bold text-xl'>{name[0].toUpperCase()}</span></div>
         <div className='text-lg font-semibold'>{name.toUpperCase()}</div>
@@ -30,14 +29,9 @@ const SendMoney = () => {
         headers:{
           Authorization : "Bearer "+localStorage.getItem("token")
         }
-      }).then(response => {
-              notify(); // Display success notification
-            })
-            .catch(error => {
-              toast.error("Failed to send money"); // Display error notification if the request fails
-            });
+      })
     }} label={"Initiate Transfer"}/>
-    <ToastContainer />
+
     </div>
       
     </div>
