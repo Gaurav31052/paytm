@@ -12,7 +12,7 @@ const SendMoney = () => {
   const name =SearchParams.get("name");
   const [amount,setAmount] = useState("")
   const notify = () => toast("Money Send Successfully");
-  const navigate = useNavigate();
+  const navigate = useNavigate
   return (
     <div className='h-screen flex justify-center items-center bg-slate-700'>
     <div className=' w-1/3 border-2 rounded-lg flex-col flex p-4 bg-slate-200'>
@@ -34,8 +34,8 @@ const SendMoney = () => {
       }).then(response => {
               notify(); // Display success notification
               setTimeout(()=>{
-                navigate('/dashboard')
-              },3000)
+                Navigate('/dashboard')
+              },2000)
             })
             .catch(error => {
               toast.error("Failed to send money"); // Display error notification if the request fails

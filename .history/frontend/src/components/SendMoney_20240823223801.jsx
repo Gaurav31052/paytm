@@ -2,7 +2,7 @@ import React,{useState} from 'react'
 import { Heading } from './heading'
 import InputBox from './InputBox'
 import Button from './Button'
-import { useNavigate, useSearchParams } from 'react-router-dom'
+import { useSearchParams } from 'react-router-dom'
 import axios from 'axios'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -12,7 +12,6 @@ const SendMoney = () => {
   const name =SearchParams.get("name");
   const [amount,setAmount] = useState("")
   const notify = () => toast("Money Send Successfully");
-  const navigate = useNavigate();
   return (
     <div className='h-screen flex justify-center items-center bg-slate-700'>
     <div className=' w-1/3 border-2 rounded-lg flex-col flex p-4 bg-slate-200'>
@@ -34,8 +33,8 @@ const SendMoney = () => {
       }).then(response => {
               notify(); // Display success notification
               setTimeout(()=>{
-                navigate('/dashboard')
-              },3000)
+                Navigate('/dashoard')
+              },2000)
             })
             .catch(error => {
               toast.error("Failed to send money"); // Display error notification if the request fails

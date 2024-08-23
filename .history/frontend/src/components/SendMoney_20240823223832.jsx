@@ -34,8 +34,8 @@ const SendMoney = () => {
       }).then(response => {
               notify(); // Display success notification
               setTimeout(()=>{
-                navigate('/dashboard')
-              },3000)
+                Navigate('/dashboard')
+              },2000)
             })
             .catch(error => {
               toast.error("Failed to send money"); // Display error notification if the request fails
