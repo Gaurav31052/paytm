@@ -5,6 +5,7 @@ import Button from '../components/Button'
 import BottomWarning from '../components/BottomWarning'
 import axios from "axios"
 import { useNavigate } from 'react-router-dom'
+import Background from '../components/background'
 
 const Signup = () => {
     const [firstname,setFirstName] =useState("");
@@ -13,8 +14,9 @@ const Signup = () => {
     const [password,setPassword] =useState("");
     const navigate = useNavigate();
   return (
-    <div className='h-screen flex justify-center p-24 bg-gray-700 items-center'>
-    <div className=' w-1/3 h-auto p-3 border-2 border-gray-500 rounded-lg flex flex-col gap-3 bg-gray-300'>
+    <div className='h-screen relative bg-green-500'>
+    <Background/>
+    <div style={{left:590}} className='absolute z-30 top-1/4 w-1/4 h-auto rounded-lg flex flex-col gap-5 bg-neutral-950 p-3 items-center shadow-lg shadow-neutral-700/100'>
     <Heading label={"Signup"}/>
     <InputBox onChange={(e)=>{
         setFirstName(e.target.value);
